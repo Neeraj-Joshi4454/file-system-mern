@@ -16,7 +16,7 @@ const fileRoutes = require('./routes/FileRoutes')
 app.use('/api/users', userRoutes);
 app.use('/api/files', fileRoutes);
 
-mongoose.connect(`mongodb+srv://neerajmjoshi1:NLcyIbMUK5cwJ6Si@cluster0.m3wptq4.mongodb.net/mobigicFileSystem?retryWrites=true&w=majority`, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
